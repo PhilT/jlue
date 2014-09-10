@@ -1,0 +1,26 @@
+$fa-font-path: '../node_modules/font-awesome/fonts';
+
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import '../node_modules/normalize.css/normalize.css';
+@import 'grid';
+
+body {
+  font-family: sans-serif;
+}
+
+main {
+  @include grid;
+}
+
+article {
+  @include column(9);
+
+  &:first-child {
+    margin-left: 0px;
+    clear: left;
+  }
+}
+
+section {
+  @include column(3);
+}
