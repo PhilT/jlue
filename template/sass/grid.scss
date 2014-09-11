@@ -3,6 +3,7 @@
 $width: ($column-width * $columns) + ($gutter * ($columns - 1));
 
 @mixin grid {
+  clear: both;
   max-width: $width;
   margin: 0px auto;
   padding: 0 $padding 0 $padding;
@@ -17,6 +18,4 @@ $width: ($column-width * $columns) + ($gutter * ($columns - 1));
   width: $grid;
   float: left;
   margin-left: $gutter-percentage;
-  background-color: pink;
-  height: 100px;
 }
