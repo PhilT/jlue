@@ -40,10 +40,10 @@
     "checkStyle": "jscs src spec",
 
     "watch": "npm run watch-test & npm run watch-sass & npm run watch-js",
-    "watch-sass": "nodemon -w sass -e scss -x \"npm run debug-sass\"",
-    "watch-js": "nodemon -w src -e js -x \"npm run debug-js\"",
-    "watch-test": "nodemon -w spec -e js -x \"npm test\"",
-    "watch-start": "nodemon server.js",
+    "watch-sass": "nodemon -w sass -e scss -x \"bash -c 'npm run debug-sass'\"",
+    "watch-js": "nodemon -w src -e js -x \"bash -c 'npm run debug-js'\"",
+    "watch-test": "nodemon -w spec -e js -x \"bash -c 'npm test'\"",
+    "watch-start": "nodemon --debug",
 
     "debug-sass": "node-sass --source-map --source-comments map -o public/bundle.css sass/main.scss",
     "debug-js": "browserify --debug -o public/bundle.js src/main.js"
