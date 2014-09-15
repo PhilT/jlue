@@ -10,5 +10,5 @@ Everything is run via npm.
 
 # TODO
 
-* test all npm commands
 * make sure server starts and can serve the index.html
+* Exercise all libraries to ensure it's all hooked up - e.g. ensure Jasmine mocks and all are working, plus font-awesome, mongodb, nock, etc

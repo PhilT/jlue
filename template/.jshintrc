@@ -37,6 +37,7 @@
       "before",
       "after",
       "beforeEach",
-      "afterEach"
+      "afterEach",
+      "expect"
   ]
 }

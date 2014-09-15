@@ -16,21 +16,18 @@ choices.
 
 ## Summary of tools
 
-* Normalize.css
-* FontAwesome
-* MongoDB
-* request
-* sprintf-js
-
-* Node-Sass
-* Nodemon
-* Browserify
-* Mocha
-* Chai
-* Sinon
-* Nock
-* JSHint
-* JSCS
+* [Normalize.css](http://necolas.github.io/normalize.css/)
+* [FontAwesome](http://fortawesome.github.io/)
+* [MongoDB](http://www.mongodb.org/)
+* [request](https://github.com/mikeal/request)
+* [sprintf-js](https://github.com/alexei/sprintf.js)
+* [Node-Sass](https://github.com/sass/node-sass)
+* [Nodemon](http://nodemon.io/)
+* [Browserify](http://browserify.org/)
+* [Jasmine](http://jasmine.github.io/2.0/introduction.html)
+* [Nock](https://github.com/pgte/nock)
+* [JSHint](http://www.jshint.com/)
+* [JSCS](https://github.com/jscs-dev/node-jscs)
 
 
 ## Summary of tools NOT used

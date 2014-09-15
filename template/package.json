@@ -14,15 +14,12 @@
   },
   "devDependencies": {
     "browserify": "5.11.x",
-    "chai": "1.9.x",
+    "jasmine": "2.0.x",
     "jscs": "1.6.x",
     "jshint": "2.5.x",
     "jshint-full-path": "1.1.x",
-    "mocha": "1.21.x",
     "nock": "0.46.x",
     "nodemon": "1.2.x",
-    "sinon": "1.10.x",
-    "sinon-chai": "2.5.x",
     "supertest": "0.13.x",
     "uglify-js": "2.3.x",
     "watchify": "1.0.x"
@@ -33,7 +30,7 @@
   "scripts": {
     "prepublish": "npm run build-sass && npm run build-js && npm test",
     "pretest": "npm run lint && npm run checkStyle",
-    "test": "mocha --recursive spec",
+    "test": "jasmine",
     "start": "node server.js",
 
     "build": "npm prepublish",
