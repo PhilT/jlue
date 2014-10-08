@@ -26,9 +26,9 @@ module.exports = http.createServer(function (request, response) {
       response.writeHead(404, {'Content-Type': 'text/plain'});
       response.write('404 Not Found\n');
       response.end();
-      return true;
-    } else {
       return false;
+    } else {
+      return true;
     }
   };
 
@@ -41,6 +41,7 @@ module.exports = http.createServer(function (request, response) {
   };
 
   fileRead = function readFile(err, file) {
+
     if (err) {
       response.writeHead(500, {"Content-Type": "text/plain"});
       response.write(err + "\n");
@@ -64,4 +65,6 @@ module.exports = http.createServer(function (request, response) {
       fs.readFile(filename, "binary", fileRead);
     }
   });
-}).listen(process.env.npm_package_config_port);
+}).listen(process.env.npm_package_config_port || 80);
+
+console.log('Server running on port ' + (process.env.npm_package_config_port || 80));

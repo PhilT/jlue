@@ -21,42 +21,35 @@ semantic grid system and other libraries.
 
 ## Summary of libraries used
 
-* [Normalize.css](http://necolas.github.io/normalize.css/)
-* [FontAwesome](http://fortawesome.github.io/)
-* [MongoDB](http://www.mongodb.org/)
-* [request](https://github.com/mikeal/request)
-* [sprintf-js](https://github.com/alexei/sprintf.js)
-* [Node-Sass](https://github.com/sass/node-sass)
-* [Nodemon](http://nodemon.io/)
-* [Browserify](http://browserify.org/)
-* [Jasmine](http://jasmine.github.io/2.0/introduction.html)
-* [Nock](https://github.com/pgte/nock)
-* [JSHint](http://www.jshint.com/)
-* [JSCS](https://github.com/jscs-dev/node-jscs)
+* [Browserify](http://browserify.org/) for getting node goodness on the frontend
+* [FontAwesome](http://fortawesome.github.io/) for icons
 * [i18n-js](https://github.com/fnando/i18n-js)
+* [Jasmine](http://jasmine.github.io/2.0/introduction.html) for testing
+* [JSHint](http://www.jshint.com/) for sanity
+* [JSCS](https://github.com/jscs-dev/node-jscs) for more sanity
+* [Nock](https://github.com/pgte/nock)
+* [Nodemon](http://nodemon.io/) for watching stuff
+* [Normalize.css](http://necolas.github.io/normalize.css/) for a browser baseline
+* [Node-Sass](https://github.com/sass/node-sass) for stylesheets
+* [PostgreSQL](http://www.postgresql.org/) for database
+* [request](https://github.com/mikeal/request) for simple HTTP
+* [sprintf-js](https://github.com/alexei/sprintf.js) for simple string manipulation
+* [supertest]() not sure what for yet
 
 
 ## Summary of libraries NOT used
 
-* Grunt, gulp, etc - npm does a fine job
 * Bootstrap, Element UI, etc - I plan to use my own semantic grid and define
   my own minimal UI framework
 * CoffeeScript - I believe JS can be beautiful enough
+* Grunt, gulp, etc - for simple tasks npm does a fine job
 * JQuery - It's less important these days, speed gains using native,
   build my own, specific library
-* Express - not sure what I need MVC-wise yet
+* Express - may use this depending on requirements
 * Component, Duo, etc - Browserify is enough for now
 
 
 ## Usage
-
-Watches in debug mode (folder, source-maps, debugging, etc)
-
-    npm run watch
-
-Builds in production mode (compresses, no source-maps, no debugging)
-
-    npm install
 
 ### Start a new project
 
@@ -73,6 +66,21 @@ or
     jlue update
 
 
+### Once in your created project you can do
+
+Watches in debug mode (folder, source-maps, debugging, etc)
+
+    npm run watch
+
+Builds in production mode (compresses, no source-maps, no debugging)
+
+    npm install
+
+Start a server on port 8080
+
+    npm start
+
+
 ## Inspired by
 
 * http://clock.co.uk/blog/tools-for-unit-testing-and-quality-assurance-in-node-js
@@ -87,4 +95,4 @@ or
 - [ ] check source maps work
 - [ ] test jasmine mocks
 - [ ] test nock
-- [ ] test mongodb
+- [ ] test postgres

@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "font-awesome": "4.2.x",
-    "mongodb": "1.4.x",
+    "pg.js": "3.5.x",
     "node-sass": "0.9.x",
     "normalize.css": "3.0.x",
     "request": "2.42.x",
@@ -21,8 +21,7 @@
     "nock": "0.46.x",
     "nodemon": "1.2.x",
     "supertest": "0.13.x",
-    "uglify-js": "2.3.x",
-    "watchify": "1.0.x"
+    "uglify-js": "2.3.x"
   },
   "config": {
     "port": "8080"
@@ -33,7 +32,7 @@
     "test": "jasmine",
     "start": "node server.js",
 
-    "build": "npm prepublish",
+    "build": "npm run prepublish",
     "build-sass": "node-sass -o public/bundle.css sass/main.scss",
     "build-js": "browserify src/main.js | uglifyjs -mc > public/bundle.js",
     "lint": "jshint src spec server.js --reporter=node_modules/jshint-full-path/index.js",
