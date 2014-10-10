@@ -88,6 +88,7 @@ Start a server on port 8080
 * http://www.lukeharrison.net/blog/create-a-sass-grid-system/
 * http://www.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/
 * http://www.responsivegridsystem.com/
+* http://blog.modulus.io/using-npm-scripts-to-build-asset-pipeline
 
 
 ## TODO

@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "browserify": "5.11.x",
+    "i18n-js": "1.0.x",
     "jasmine": "2.0.x",
     "jscs": "1.6.x",
     "jshint": "2.5.x",
@@ -27,13 +28,14 @@
     "port": "8080"
   },
   "scripts": {
-    "prepublish": "npm run build-sass && npm run build-js && npm test",
+    "prepublish": "npm run copy-fonts && npm run build-sass && npm run build-js && npm test",
     "pretest": "npm run lint && npm run checkStyle",
     "test": "jasmine",
     "start": "node server.js",
 
     "build": "npm run prepublish",
-    "build-sass": "node-sass -o public/bundle.css sass/main.scss",
+    "build-sass": "cp node_modules/normalize.css/normalize.css public/bundle.css && node-sass sass/main.scss --include-path node_modules/font-awesome/scss --stdout >> public/bundle.css",
+    "copy-fonts": "mkdir -p public/fonts && cp node_modules/font-awesome/fonts/* public/fonts",
     "build-js": "browserify src/main.js | uglifyjs -mc > public/bundle.js",
     "lint": "jshint src spec server.js --reporter=node_modules/jshint-full-path/index.js",
     "checkStyle": "jscs src spec",
