@@ -1,0 +1,19 @@
+@import 'grid_settings'
+
+width (column-width * columns) + (gutter * (columns - 1))
+
+grid
+  clear both
+  max-width width
+  margin 0px auto
+  padding 0 padding 0 padding
+
+column(column)
+  grid (column-width * column) + (gutter * (column - 1))
+
+  grid (grid / width) * 100%
+  gutter-percentage (gutter / width) * 100%
+
+  width grid
+  float left
+  margin-left gutter-percentage

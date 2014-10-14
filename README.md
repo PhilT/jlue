@@ -30,7 +30,7 @@ semantic grid system and other libraries.
 * [Nock](https://github.com/pgte/nock)
 * [Nodemon](http://nodemon.io/) for watching stuff
 * [Normalize.css](http://necolas.github.io/normalize.css/) for a browser baseline
-* [Node-Sass](https://github.com/sass/node-sass) for stylesheets
+* [Stylus](https://github.com/sass/node-sass) for stylesheets
 * [PostgreSQL](http://www.postgresql.org/) for database
 * [request](https://github.com/mikeal/request) for simple HTTP
 * [sprintf-js](https://github.com/alexei/sprintf.js) for simple string manipulation
@@ -50,6 +50,8 @@ semantic grid system and other libraries.
 
 
 ## Usage
+
+[NOT IMPLEMENTED YET]
 
 ### Start a new project
 
@@ -81,6 +83,20 @@ Start a server on port 8080
     npm start
 
 
+## Rationale for some of my library choices
+
+### Stylus - Stylesheets
+
+Sass requires Ruby and Node-sass requires Visual Studio. So I looked elsewhere and found
+Stylus. Clean syntax, feature-rich, decent support.
+
+### Nodemon
+
+Why does every library need to implement a watcher? Keep it light and consistent and use nodemon.
+
+
+
+
 ## Inspired by
 
 * http://clock.co.uk/blog/tools-for-unit-testing-and-quality-assurance-in-node-js
@@ -97,3 +113,4 @@ Start a server on port 8080
 - [ ] test jasmine mocks
 - [ ] test nock
 - [ ] test postgres
+- [ ] test features of all libraries
