@@ -7,7 +7,7 @@ describe('Array', function () {
     });
 
     it('returns positive when the value is present', function () {
-      expect([1, 3].indexOf(2)).toEqual(1);
+      expect([1, 2, 3].indexOf(2)).toEqual(1);
     });
   });
 });

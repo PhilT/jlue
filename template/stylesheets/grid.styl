@@ -1,6 +1,6 @@
 @import 'grid_settings'
 
-width (column-width * columns) + (gutter * (columns - 1))
+width = (column-width * columns) + (gutter * (columns - 1))
 
 grid
   clear both
@@ -9,10 +9,10 @@ grid
   padding 0 padding 0 padding
 
 column(column)
-  grid (column-width * column) + (gutter * (column - 1))
+  grid = (column-width * column) + (gutter * (column - 1))
 
-  grid (grid / width) * 100%
-  gutter-percentage (gutter / width) * 100%
+  grid = (grid / width) * 100%
+  gutter-percentage = (gutter / width) * 100%
 
   width grid
   float left

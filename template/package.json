@@ -20,8 +20,8 @@
     "nib": "1.0.x",
     "nock": "0.46.x",
     "nodemon": "1.2.x",
-    "normalize.css": "3.0.x",
     "stylus": "0.49.x",
+    "stylus-normalize": "3.0.x",
     "supertest": "0.13.x",
     "uglify-js": "2.3.x"
   },
@@ -29,28 +29,28 @@
     "port": "8080"
   },
   "scripts": {
-    "prepublish": "npm run clean && npm run copy-fonts && npm run build-sass && npm run build-js && npm test",
+    "prepublish": "npm run clean && npm run copy-fonts && npm run build-css && npm run build-js && npm test",
     "pretest": "npm run lint && npm run checkStyle",
     "test": "jasmine",
     "start": "node server.js",
 
     "clean": "bash -c \"mkdir -p tmp && mkdir -p public/fonts\"",
     "build": "npm run prepublish",
-    "concat-css": "cat node_modules/normalize.css/normalize.css tmp/bundle.css >> public/bundle.css",
-    "build-css": "stylus stylesheets/main.styl -I node_modules/font-awesome-stylus/stylus -I node_modules/nib/lib/nib -o tmp/bundle.css",
-    "copy-fonts": "cp node_modules/font-awesome/fonts/* public/fonts",
+    "build-css": "stylus -u nib/lib/nib --import node_modules/stylus-normalize/normalize --import node_modules/font-awesome-stylus/stylus/index -I stylesheets < stylesheets/main.styl > public/bundle.css",
+    "copy-fonts": "cp node_modules/font-awesome-stylus/fonts/* public/fonts",
     "build-js": "browserify src/main.js | uglifyjs -mc > public/bundle.js",
     "lint": "jshint src spec server.js --reporter=node_modules/jshint-full-path/index.js",
     "checkStyle": "jscs src spec",
 
     "watch": "npm run watch-test & npm run watch-sass & npm run watch-js",
-    "watch-css": "nodemon -w sass -e scss --exec \"npm run debug-sass\"",
+    "watch-css": "nodemon -w stylesheets -e styl -x \"npm run debug-css\"",
     "watch-js": "nodemon -w src -e js -x \"node_modules/.bin/browserify --debug -o public/bundle.js src/main.js\"",
     "watch-test": "nodemon -w spec -e js -x \"node_modules/.bin/jasmine\"",
     "watch-start": "nodemon --debug",
     "test-nodemon": "nodemon -w . -x \"npm -v\"",
 
-    "debug-css": "npm run build-sass -- --sourcemap --line-numbers"
+    "//": "this line uses a feature only available in npm 2 (--)",
+    "debug-css": "npm run build-css -- --sourcemap-inline --line-numbers"
   },
   "repository": {
     "type": "git",
