@@ -14,9 +14,6 @@
     "font-awesome-stylus": "1.2.x",
     "i18n-js": "1.0.x",
     "jasmine": "2.0.x",
-    "jscs": "1.6.x",
-    "jshint": "2.5.x",
-    "jshint-full-path": "1.1.x",
     "nib": "1.0.x",
     "nock": "0.46.x",
     "nodemon": "1.2.x",
@@ -62,3 +59,4 @@
   },
   "homepage": "https://github.com/PhilT/PROJECT_NAME"
 }
+
