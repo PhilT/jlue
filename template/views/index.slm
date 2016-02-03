@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Taken from Material Design Lite Theme Preview
+    link href='/bundle.css' rel='stylesheet'
+    script src='/material.min.js'
+    script src='/bundle.js'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+
+  body
+    div class='mdl-layout mdl-js-layout mdl-layout--fixed-header'
+      header class='mdl-layout__header'
+        div class='mdl-layout__header-row'
+          span class='mdl-layout-title' Theme Preview
+      div class='mdl-layout__drawer'
+        span class='mdl-layout-title' Theme Preview
+        nav class='mdl-navigation'
+          a class='mdl-navigation__link' href='' Some
+          a class='mdl-navigation__link' href='' Links
+          a class='mdl-navigation__link' href='' Here
+      main class='mdl-layout__content'
+        div class='page-content'
+          h3 Try it out
+          p Lorem ipsum dolor sit amet.
+          button class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' Button
+          button class='mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect'
+            i class='material-icons' email
+

@@ -1,0 +1,25 @@
+{
+  "name": "jlue",
+  "version": "0.0.1",
+  "description": "JavaScript Glue - A template for a Node web application",
+  "preferGlobal": true,
+  "license": "ISC",
+  "scripts": {
+    "prepublish": "npm test",
+    "test": "./integration-test.sh",
+    "update-cache": "rm -f nm_cache.tar && cd tmp/test && tar cf ../../nm_cache.tar node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:PhilT/jlue.git"
+  },
+  "author": "Phil Thompson",
+  "bugs": {
+    "url": "https://github.com/PhilT/jlue/issues"
+  },
+  "homepage": "https://github.com/PhilT/jlue",
+  "bin": {
+    "jlue": "index.js"
+  }
+}
+

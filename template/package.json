@@ -1,53 +1,58 @@
 {
   "name": "PROJECT_NAME",
   "version": "0.0.1",
-  "description": "DESCRIPTION",
+  "description": "Description of my app",
   "main": "server.js",
   "private": true,
   "dependencies": {
-    "pg.js": "3.5.x",
-    "request": "2.42.x",
-    "sprintf": "0.1.x"
+    "pg.js": "*"
   },
   "devDependencies": {
-    "browserify": "5.11.x",
-    "font-awesome-stylus": "1.2.x",
-    "i18n-js": "1.0.x",
-    "jasmine": "2.0.x",
-    "nib": "1.0.x",
-    "nock": "0.46.x",
-    "nodemon": "1.2.x",
-    "stylus": "0.49.x",
-    "stylus-normalize": "3.0.x",
-    "supertest": "0.13.x",
-    "uglify-js": "2.3.x"
+    "browserify": "*",
+    "es6-templates": "*",
+    "eslint": "*",
+    "i18n-js": "*",
+    "nock": "*",
+    "nodemon": "*",
+    "slm": "*",
+    "stylus": "*",
+    "tape": "*",
+    "uglify-js": "*"
   },
   "config": {
     "port": "8080"
   },
   "scripts": {
-    "prepublish": "npm run clean && npm run copy-fonts && npm run build-css && npm run build-js && npm test",
-    "pretest": "npm run lint && npm run checkStyle",
-    "test": "jasmine",
     "start": "node server.js",
 
-    "clean": "bash -c \"mkdir -p tmp && mkdir -p public/fonts\"",
-    "build": "npm run prepublish",
-    "build-css": "stylus -u nib/lib/nib --import node_modules/stylus-normalize/normalize --import node_modules/font-awesome-stylus/stylus/index -I stylesheets < stylesheets/main.styl > public/bundle.css",
-    "copy-fonts": "cp node_modules/font-awesome-stylus/fonts/* public/fonts",
-    "build-js": "browserify src/main.js | uglifyjs -mc > public/bundle.js",
-    "lint": "jshint src spec server.js --reporter=node_modules/jshint-full-path/index.js",
-    "checkStyle": "jscs src spec",
+    "clean": "rm -rf tmp public && mkdir -p tmp public",
+    "copy:lib": "cp -R lib/* public/",
+    "postclean": "npm run copy:lib",
+    "prebuild": "npm run clean",
 
-    "watch": "npm run watch-test & npm run watch-sass & npm run watch-js",
-    "watch-css": "nodemon -w stylesheets -e styl -x \"npm run debug-css\"",
-    "watch-js": "nodemon -w src -e js -x \"node_modules/.bin/browserify --debug -o public/bundle.js src/main.js\"",
-    "watch-test": "nodemon -w spec -e js -x \"node_modules/.bin/jasmine\"",
-    "watch-start": "nodemon --debug",
+    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "build:css": "stylus -p -c styles/main.styl > public/bundle.css",
+    "build:js": "browserify -e js/main.js -o public/bundle.js",
+    "prebuild:js:minify": "npm run build:js",
+    "build:js:minify": "cat public/bundle.js | uglifyjs -mc > public/bundle.js",
+    "build:html": "node slm.js views public",
+
+    "prelint": "npm run build",
+    "lint": "eslint js tests server.js",
+    "pretest": "npm run lint",
+    "test": "tape 'tests/**/*.js'",
+
+    "prewatch": "npm run clean",
+    "watch": "npm run watch:css & npm run watch:js & npm run watch:html & npm run watch:test",
+    "watch:css": "nodemon -w styles -e styl -x 'npm run debug:css'",
+    "watch:js": "nodemon -w js -e js -x 'npm run debug:js'",
+    "watch:html": "nodemon -w views -e slm -x 'npm run build:html'",
+    "watch:test": "nodemon -w test -w js -e js -x 'npm test'",
+    "watch:start": "nodemon --debug",
     "test-nodemon": "nodemon -w . -x \"npm -v\"",
 
-    "//": "this line uses a feature only available in npm 2 (--)",
-    "debug-css": "npm run build-css -- --sourcemap-inline --line-numbers"
+    "debug:css": "npm run build:css -- --sourcemap-inline --line-numbers",
+    "debug:js": "npm run build:js -- --debug"
   },
   "repository": {
     "type": "git",
