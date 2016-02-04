@@ -8,8 +8,9 @@
     "pg.js": "*"
   },
   "devDependencies": {
+    "babelify": "*",
+    "babel-preset-es2015": "*",
     "browserify": "*",
-    "es6-templates": "*",
     "eslint": "*",
     "i18n-js": "*",
     "nock": "*",
@@ -32,7 +33,7 @@
 
     "build": "npm run build:css && npm run build:js && npm run build:html",
     "build:css": "stylus -p -c styles/main.styl > public/bundle.css",
-    "build:js": "browserify -e js/main.js -o public/bundle.js",
+    "build:js": "browserify -t babelify -e js/main.js -o public/bundle.js",
     "prebuild:js:minify": "npm run build:js",
     "build:js:minify": "cat public/bundle.js | uglifyjs -mc > public/bundle.js",
     "build:html": "node slm.js views public",
@@ -64,4 +65,3 @@
   },
   "homepage": "https://github.com/PhilT/PROJECT_NAME"
 }
-

@@ -1,7 +1,7 @@
 # JLUE - JavaScript Glue
 
 My defaults for project structure, package management, build and test tools,
-semantic grid system and other libraries.
+UI framework and other libraries for responsive browser development.
 
 ## Some goals
 
@@ -56,7 +56,7 @@ useful.
 
 ## Usage
 
-### Create a new project
+### Create or update a project
 
     jlue <folder>
     cd <folder>
@@ -129,3 +129,6 @@ frameworks.
 * [ES6 Equivilents in ES5](https://github.com/addyosmani/es6-equivalents-in-es5)
 * [Weaning yourself off jquery](http://substack.net/weaning_yourself_off_jquery)
 
+## TODO
+
+* Prod test with no dev modules installed

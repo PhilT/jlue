@@ -22,7 +22,6 @@ html
         div class='page-content'
           h3 Try it out
           p Lorem ipsum dolor sit amet.
-          button class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' Button
+          button id='button' class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' Button
           button class='mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect'
             i class='material-icons' email
-
